@@ -22,13 +22,13 @@ local general_ui = {
   },
   EndOfBuffer = { fg = c.bg, bg = c.bg },
 
-  Visual = { bg = c.dark_water },
-  VisualBold = { bg = c.dark_water, gui = 'bold' },
+  Visual = { bg = c.toneSap },
+  VisualBold = { bg = c.toneSap, gui = 'bold' },
 
-  LineNr = { fg = c.grey, bg = c.bg },
+  LineNr = { fg = c.toneBase5, bg = c.bg },
   Cursor = { bg = c.water },
   CursorLine = { bg = c.bg_highlight },
-  CursorLineNr = { fg = c.fg, bg = c.bg_highlight },
+  CursorLineNr = { fg = c.toneBase3 },
   CursorColumn = { bg = c.bg_highlight },
 
   Folded = { fg = c.toneBase5, bg = c.bg_highlight },
@@ -36,9 +36,9 @@ local general_ui = {
   SignColumn = { bg = c.bg },
   ColorColumn = { bg = c.bg_highlight },
 
-  IndentGuide = { fg = c.grey },
-  IndentGuideEven = { fg = c.grey },
-  IndentGuideOdd = { fg = c.grey },
+  IndentGuide = { fg = toneBase6 },
+  IndentGuideEven = { fg = toneBase6 },
+  IndentGuideOdd = { fg = toneBase6 },
 
   TermCursor = { fg = c.fg, gui = 'reverse' },
   TermCursorNC = { fg = c.fg_alt, gui = 'reverse' },
@@ -47,7 +47,7 @@ local general_ui = {
 
   WildMenu = { fg = c.fg, bg = c.dark_water },
   Separator = { fg = c.fg_alt },
-  VertSplit = { fg = c.grey, bg = c.bg },
+  VertSplit = { fg = toneBase6, bg = c.bg },
 
   TabLine = {
     fg = c.toneBase7,
@@ -61,18 +61,18 @@ utils.apply_highlight(general_ui)
 
 -- Search, Highlight. Conceal, Messages
 local search_high_ui = {
-  Search = { fg = c.fg, bg = c.dark_water, gui = 'bold' },
+  Search = { fg = c.toneBase8, bg = c.toneSap, gui = 'bold' },
   Substitute = { fg = c.red, gui = 'strikethrough,bold' },
   IncSearch = { fg = c.fg, bg = c.dark_water, gui = 'bold' },
   IncSearchCursor = { gui = 'reverse' },
 
-  Conceal = { fg = c.grey, gui = 'none' },
+  Conceal = { fg = toneBase6, gui = 'none' },
   SpecialKey = { fg = c.toneAubergine, gui = 'bold' },
   NonText = { fg = c.fg_alt, gui = 'bold' },
   MatchParen = { fg = c.red, gui = 'bold' },
-  Whitespace = { fg = c.grey },
+  Whitespace = { fg = toneBase5 },
 
-  Highlight = { bg = c.bg_highlighted },
+  Highlight = { bg = c.toneSap },
   HighlightSubtle = { bg = c.bg_highlighted },
 
   Question = { fg = c.green, gui = 'bold' },
@@ -95,7 +95,7 @@ local text_colors = {
   Debug = yellow,
   Error = red,
   Special = aubergine,
-  Muted = toneBase7,
+  Muted = toneBase6,
 }
 
 for key, _ in pairs(text_colors) do
@@ -122,14 +122,14 @@ utils.high_link('Todo', 'TextWarningBold')
 
 -- Main Syntax
 local main_syntax = {
-  Tag = { fg = c.tag, gui = 'bold' },
-  Link = { fg = c.tag, sp = 'undercurl' },
-  URL = { fg = c.tag, sp = 'undercurl' },
-  Underlined = { fg = c.tag, sp = 'underline' },
+  Tag = { fg = c.toneBase1, gui = 'bold' },
+  Link = { fg = c.toneBase1, sp = 'undercurl' },
+  URL = { fg = c.toneBase1, sp = 'undercurl' },
+  Underlined = { fg = c.toneBase1, sp = 'underline' },
 
   Comment = { fg = c.toneBase5, gui = 'italic' },
   CommentBold = { fg = c.toneBase5, gui = 'bold' },
-  SpecialComment = { fg = c.toneBase7, gui = 'bold' },
+  SpecialComment = { fg = c.toneBase3, gui = 'bold' },
 
   Macro = { fg = c.toneAubergine },
   Define = { fg = c.toneAubergine, gui = 'bold' },
@@ -139,27 +139,27 @@ local main_syntax = {
 
   Label = { fg = c.toneAubergine },
   Repeat = { fg = c.toneAubergine },
-  Keyword = { fg = c.toneAubergine },
-  Operator = { fg = c.toneFront },
-  Delimiter = { fg = c.toneBase6 },
+  Keyword = { fg = c.tonePurple },
+  Operator = { fg = c.toneBase2 },
+  Delimiter = { fg = c.toneBase3 },
   Statement = { fg = c.toneAubergine },
   Exception = { fg = c.toneAubergine },
   Conditional = { fg = c.toneAubergine },
 
-  Variable = { fg = '#8B93E6' },
-  VariableBuiltin = { fg = '#8B93E6', gui = 'bold' },
-  Constant = { fg = c.toneAubergine, gui = 'bold' },
+  Variable = { fg = toneSky },
+  VariableBuiltin = { fg = toneSky, gui = 'bold' },
+  Constant = { fg = c.toneWater, gui = 'bold' },
 
-  Number = { fg = c.water },
-  Float = { fg = c.water },
-  Boolean = { fg = c.water, gui = 'bold' },
-  Enum = { fg = c.water },
+  Number = { fg = c.toneWater },
+  Float = { fg = c.toneWater },
+  Boolean = { fg = c.toneWater, gui = 'bold' },
+  Enum = { fg = c.toneWater },
 
   Character = { fg = c.toneAubergine, gui = 'bold' },
-  SpecialChar = { fg = c.base8, gui = 'bold' },
+  SpecialChar = { fg = c.toneBase3, gui = 'bold' },
 
-  String = { fg = c.green },
-  StringDelimiter = { fg = c.green },
+  String = { fg = c.toneTurquoise },
+  StringDelimiter = { fg = c.toneTurquoise },
 
   Special = { fg = c.toneAubergine },
   SpecialBold = { fg = c.toneAubergine, gui = 'bold' },
@@ -168,8 +168,8 @@ local main_syntax = {
   Argument = { fg = c.light_sky },
   Attribute = { fg = c.light_sky },
   Identifier = { fg = c.light_sky },
-  Property = { fg = c.sky },
-  Function = { fg = c.sky },
+  Property = { fg = c.toneSky },
+  Function = { fg = c.toneSky },
   FunctionBuiltin = { fg = c.light_sky, gui = 'bold' },
   KeywordFunction = { fg = c.light_bg },
   Method = { fg = c.toneAubergine },
@@ -211,9 +211,9 @@ local diff = {
   DiffModifiedGutter = { fg = c.diff_info_fg, gui = 'bold' },
   DiffRemovedGutter = { fg = c.gh_danger_fg, gui = 'bold' },
 
-  DiffAddedGutterLineNr = { fg = c.grey },
-  DiffModifiedGutterLineNr = { fg = c.grey },
-  DiffRemovedGutterLineNr = { fg = c.grey },
+  DiffAddedGutterLineNr = { fg = toneBase6 },
+  DiffModifiedGutterLineNr = { fg = toneBase6 },
+  DiffRemovedGutterLineNr = { fg = toneBase6 },
 }
 utils.high_clear('DiffAdd')
 utils.high_clear('DiffChange')
@@ -254,7 +254,7 @@ if vim.g.tone_telescope_highlights then
   local telescope = {
     TelescopeSelection = { fg = c.yellow, gui = 'bold' },
     TelescopeSelectionCaret = { fg = c.light_bg and orange or water },
-    TelescopeMultiSelection = { fg = c.grey },
+    TelescopeMultiSelection = { fg = toneBase6 },
     TelescopeNormal = { fg = c.fg },
     TelescopeMatching = { fg = c.green, gui = 'bold' },
     TelescopePromptPrefix = { fg = c.light_bg and orange or water },

@@ -14,12 +14,12 @@ Dark = {
   toneBase7  = '#222234',
   toneBase8  = '#181827',
 
-  toneAubergine = '#a56aa5',
+  toneAubergine = '#c59dc5',
   tonePurple = '#bdbde7',
-  toneTurquoise = '#00d0a7',
+  toneTurquoise = '#1fffd2',
   toneLeaf = '#28a492',
-  toneSky = '#73b3e5',
-  toneWater = '#1597ff',
+  toneSky = '#9fd4ff',
+  toneWater = '#6cbeff',
   toneSap = '#ebff00',
 
   -- derived colors
