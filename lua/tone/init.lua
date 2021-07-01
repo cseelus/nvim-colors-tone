@@ -32,7 +32,7 @@ local general_ui = {
   VisualBold = { bg = c.toneSap, gui = 'bold' },
 
   LineNr = { fg = c.toneBase5, bg = c.bg },
-  Cursor = { bg = c.water },
+  Cursor = { bg = c.toneTurquoise },
   CursorLine = { bg = c.bg_highlight },
   CursorLineNr = { fg = c.toneBase3 },
   CursorColumn = { bg = c.bg_highlight },
@@ -51,13 +51,13 @@ local general_ui = {
   TermNormal = { fg = c.fg, bg = c.bg },
   TermNormalNC = { fg = c.fg, bg = c.bg },
 
-  WildMenu = { fg = c.fg, bg = c.dark_water },
+  WildMenu = { fg = c.fg, bg = c.toneWater },
   Separator = { fg = c.fg_alt },
   VertSplit = { fg = toneBase6, bg = c.bg },
 
-  TabLine = { fg = c.toneBase7, bg = c.toneBase8, gui = 'bold' },
-  TabLineSel = { fg = c.water, bg = c.toneBase6, gui = 'bold' },
-  TabLineFill = { bg = c.toneBase8, gui = 'bold' },
+  TabLineFill = { bg = c.toneBase6 },
+  TabLine = { fg = c.toneBase3, bg = c.toneBase6 },
+  TabLineSel = { fg = c.toneBase2, bg = c.toneBase8 },
 }
 utils.apply_highlight(general_ui)
 
@@ -65,7 +65,7 @@ utils.apply_highlight(general_ui)
 local search_high_ui = {
   Search = { fg = c.toneBase1, bg = c.toneSap, gui = 'bold' },
   Substitute = { fg = c.toneAubergine, gui = 'strikethrough,bold' },
-  IncSearch = { fg = c.fg, bg = c.dark_water, gui = 'bold' },
+  IncSearch = { fg = c.fg, bg = c.toneWater, gui = 'bold' },
   IncSearchCursor = { gui = 'reverse' },
 
   Conceal = { fg = toneBase6, gui = 'none' },
@@ -90,13 +90,13 @@ utils.apply_highlight(search_high_ui)
 
 -- Text levels
 local text_colors = {
-  Normal = fg,
-  Info = water,
-  Success = green,
-  Warning = yellow,
-  Debug = yellow,
-  Error = red,
-  Special = aubergine,
+  Normal = toneBase1,
+  Info = toneWater,
+  Success = toneLeaf,
+  Warning = toneSap,
+  Debug = toneSap,
+  Error = toneAubergine,
+  Special = tonePurple,
   Muted = toneBase6,
 }
 
