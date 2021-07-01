@@ -1,136 +1,115 @@
+local utils = require('tone.utils')
+
+-- General UI
 local general_ui = {
-  Normal = { fg = c.fg, bg = c.bg },
-	Normal = { fg = fg, bg = transparent_bg and 'NONE' or bg },
-	NormalPopup = {
-		fg = fg_highlight,
-		bg = transparent_bg and 'NONE' or bg_popup,
-	},
-	NormalPopover = {
-		fg = fg_highlight,
-		bg = transparent_bg and 'NONE' or bg_popup,
-	},
-	NormalPopupPrompt = {
-		fg = base7,
-		bg = transparent_bg and 'NONE' or utils.Darken(bg_popup, 0.3),
-		gui = 'bold',
-	},
-	NormalPopupSubtle = {
-		fg = base6,
-		bg = transparent_bg and 'NONE' or bg_popup,
-	},
-	EndOfBuffer = { fg = bg, bg = transparent_bg and 'NONE' or bg },
+  Normal = { fg = c.toneBase1, bg = c.toneBase8 },
+  NormalPopup = {
+    fg = c.fg_highlight,
+    bg = c.bg_popup,
+  },
+  NormalPopover = {
+    fg = c.fg_highlight,
+    bg = c.bg_popup,
+  },
+  NormalPopupPrompt = {
+    fg = c.toneBase7,
+    bg = c.bg_popup,
+    gui = 'bold',
+  },
+  NormalPopupSubtle = {
+    fg = c.base6,
+    bg = c.bg_popup,
+  },
+  EndOfBuffer = { fg = c.bg, bg = c.bg },
 
-	Visual = { bg = dark_water },
-	VisualBold = { bg = dark_water, gui = 'bold' },
+  Visual = { bg = c.dark_water },
+  VisualBold = { bg = c.dark_water, gui = 'bold' },
 
-	LineNr = { fg = grey, bg = transparent_bg and 'NONE' or bg },
-	Cursor = { bg = water },
-	CursorLine = { bg = bg_highlight },
-	CursorLineNr = { fg = fg, bg = bg_highlight },
-	CursorColumn = { bg = bg_highlight },
+  LineNr = { fg = c.grey, bg = c.bg },
+  Cursor = { bg = c.water },
+  CursorLine = { bg = c.bg_highlight },
+  CursorLineNr = { fg = c.fg, bg = c.bg_highlight },
+  CursorColumn = { bg = c.bg_highlight },
 
-	Folded = { fg = base5, bg = bg_highlight },
-	FoldColumn = { fg = fg_alt, bg = bg },
-	SignColumn = { bg = transparent_bg and 'NONE' or bg },
-	ColorColumn = { bg = bg_highlight },
+  Folded = { fg = c.toneBase5, bg = c.bg_highlight },
+  FoldColumn = { fg = c.fg_alt, bg = c.bg },
+  SignColumn = { bg = c.bg },
+  ColorColumn = { bg = c.bg_highlight },
 
-	IndentGuide = { fg = grey },
-	IndentGuideEven = { fg = grey },
-	IndentGuideOdd = { fg = grey },
+  IndentGuide = { fg = c.grey },
+  IndentGuideEven = { fg = c.grey },
+  IndentGuideOdd = { fg = c.grey },
 
-	TermCursor = { fg = fg, gui = 'reverse' },
-	TermCursorNC = { fg = fg_alt, gui = 'reverse' },
-	TermNormal = { fg = fg, bg = bg },
-	TermNormalNC = { fg = fg, bg = bg },
+  TermCursor = { fg = c.fg, gui = 'reverse' },
+  TermCursorNC = { fg = c.fg_alt, gui = 'reverse' },
+  TermNormal = { fg = c.fg, bg = c.bg },
+  TermNormalNC = { fg = c.fg, bg = c.bg },
 
-	WildMenu = { fg = fg, bg = dark_water },
-	Separator = { fg = fg_alt },
-	VertSplit = { fg = grey, bg = bg },
+  WildMenu = { fg = c.fg, bg = c.dark_water },
+  Separator = { fg = c.fg_alt },
+  VertSplit = { fg = c.grey, bg = c.bg },
 
-	TabLine = {
-		fg = base7,
-		bg = transparent_bg and 'NONE' or bg_alt,
-		gui = 'bold',
-	},
-	TabLineSel = { fg = water, bg = bg, gui = 'bold' },
-	TabLineFill = { bg = transparent_bg and 'NONE' or base1, gui = 'bold' },
-
-	StatusLine = { fg = base8, bg = bg_popup },
-	StatusLineNC = { fg = base6, bg = bg_popup },
-	StatusLinePart = { fg = base6, bg = bg_popup, gui = 'bold' },
-	StatusLinePartNC = { fg = base6, bg = bg_popup, gui = 'bold' },
-
-	Pmenu = { fg = fg, bg = bg_highlight },
-	PmenuSel = { fg = base0, bg = water },
-	PmenuSelBold = { fg = base0, bg = water, gui = 'bold' },
-	PmenuSbar = { bg = bg_alt },
-	PmenuThumb = { bg = fg },
+  TabLine = {
+    fg = c.toneBase7,
+    bg = c.bg_alt,
+    gui = 'bold',
+  },
+  TabLineSel = { fg = c.water, bg = c.bg, gui = 'bold' },
+  TabLineFill = { bg = c.base1, gui = 'bold' },
 }
-
-if vim.opt.pumblend == 1 then
-	vim.opt.pumblend = 20
-end
-
 utils.apply_highlight(general_ui)
 
--- }}}
-
--- Search, Highlight. Conceal, Messages {{{
-
+-- Search, Highlight. Conceal, Messages
 local search_high_ui = {
-	Search = { fg = fg, bg = dark_water, gui = 'bold' },
-	Substitute = { fg = red, gui = 'strikethrough,bold' },
-	IncSearch = { fg = fg, bg = dark_water, gui = 'bold' },
-	IncSearchCursor = { gui = 'reverse' },
+  Search = { fg = c.fg, bg = c.dark_water, gui = 'bold' },
+  Substitute = { fg = c.red, gui = 'strikethrough,bold' },
+  IncSearch = { fg = c.fg, bg = c.dark_water, gui = 'bold' },
+  IncSearchCursor = { gui = 'reverse' },
 
-	Conceal = { fg = grey, gui = 'none' },
-	SpecialKey = { fg = aubergine, gui = 'bold' },
-	NonText = { fg = fg_alt, gui = 'bold' },
-	MatchParen = { fg = red, gui = 'bold' },
-	Whitespace = { fg = grey },
+  Conceal = { fg = c.grey, gui = 'none' },
+  SpecialKey = { fg = c.toneAubergine, gui = 'bold' },
+  NonText = { fg = c.fg_alt, gui = 'bold' },
+  MatchParen = { fg = c.red, gui = 'bold' },
+  Whitespace = { fg = c.grey },
 
-	Highlight = { bg = bg_highlighted },
-	HighlightSubtle = { bg = bg_highlighted },
+  Highlight = { bg = c.bg_highlighted },
+  HighlightSubtle = { bg = c.bg_highlighted },
 
-	Question = { fg = green, gui = 'bold' },
+  Question = { fg = c.green, gui = 'bold' },
 
-	File = { fg = fg },
-	Directory = { fg = aubergine, gui = 'bold' },
-	Title = { fg = aubergine, gui = 'bold' },
+  File = { fg = c.fg },
+  Directory = { fg = c.toneAubergine, gui = 'bold' },
+  Title = { fg = c.toneAubergine, gui = 'bold' },
 
-	Bold = { gui = 'bold' },
-	Emphasis = { fg = green, gui = 'bold' },
+  Bold = { gui = 'bold' },
+  Emphasis = { fg = c.green, gui = 'bold' },
 }
-
 utils.apply_highlight(search_high_ui)
 
--- }}}
-
--a Text levels {{{
-
+-- Text levels
 local text_colors = {
-	Normal = fg,
-	Info = water,
-	Success = green,
-	Warning = yellow,
-	Debug = yellow,
-	Error = red,
-	Special = aubergine,
-	Muted = base7,
+  Normal = fg,
+  Info = water,
+  Success = green,
+  Warning = yellow,
+  Debug = yellow,
+  Error = red,
+  Special = aubergine,
+  Muted = toneBase7,
 }
 
 for key, _ in pairs(text_colors) do
-	utils.apply_highlight({
-		['Text' .. key] = {
-			fg = text_colors[key],
-		},
-	})
-	utils.apply_highlight({
-		['Text' .. key .. 'Bold'] = {
-			fg = text_colors[key],
-			gui = 'bold',
-		},
-	})
+  utils.apply_highlight({
+    ['Text' .. key] = {
+      fg = c.text_colors[key],
+    },
+  })
+  utils.apply_highlight({
+    ['Text' .. key .. 'Bold'] = {
+      fg = c.text_colors[key],
+      gui = 'bold',
+    },
+  })
 end
 
 utils.high_link('Msg', 'TextSuccess')
@@ -141,77 +120,71 @@ utils.high_link('ErrorMsg', 'TextError')
 utils.high_link('ModeMsg', 'TextSpecial')
 utils.high_link('Todo', 'TextWarningBold')
 
--- }}}
-
--- Main Syntax {{{
-
+-- Main Syntax
 local main_syntax = {
-	Tag = { fg = tag, gui = 'bold' },
-	Link = { fg = tag, sp = 'undercurl' },
-	URL = { fg = tag, sp = 'undercurl' },
-	Underlined = { fg = tag, sp = 'underline' },
+  Tag = { fg = c.tag, gui = 'bold' },
+  Link = { fg = c.tag, sp = 'undercurl' },
+  URL = { fg = c.tag, sp = 'undercurl' },
+  Underlined = { fg = c.tag, sp = 'underline' },
 
-	Comment = {
-		fg = base5,
-		gui = vim.g.tone_italic_comments and 'italic' or 'NONE',
-	},
-	CommentBold = { fg = base5, gui = 'bold' },
-	SpecialComment = { fg = base7, gui = 'bold' },
+  Comment = { fg = c.toneBase5, gui = 'italic' },
+  CommentBold = { fg = c.toneBase5, gui = 'bold' },
+  SpecialComment = { fg = c.toneBase7, gui = 'bold' },
 
-	Macro = { fg = aubergine },
-	Define = { fg = aubergine, gui = 'bold' },
-	Include = { fg = aubergine },
-	PreProc = { fg = aubergine, gui = 'bold' },
-	PreCondit = { fg = aubergine, gui = 'bold' },
+  Macro = { fg = c.toneAubergine },
+  Define = { fg = c.toneAubergine, gui = 'bold' },
+  Include = { fg = c.toneAubergine },
+  PreProc = { fg = c.toneAubergine, gui = 'bold' },
+  PreCondit = { fg = c.toneAubergine, gui = 'bold' },
 
-	Label = { fg = light_bg and orange or water },
-	Repeat = { fg = light_bg and orange or water },
-	Keyword = { fg = light_bg and erange or water },
-	Operator = { fg = light_bg and orange or water },
-	Delimiter = { fg = light_bg and orange or water },
-	Statement = { fg = light_bg and orange or water },
-	Exception = { fg = light_bg and orange or water },
-	Conditional = { fg = light_bg and orange or water },
+  Label = { fg = c.toneAubergine },
+  Repeat = { fg = c.toneAubergine },
+  Keyword = { fg = c.toneAubergine },
+  Operator = { fg = c.toneFront },
+  Delimiter = { fg = c.toneBase6 },
+  Statement = { fg = c.toneAubergine },
+  Exception = { fg = c.toneAubergine },
+  Conditional = { fg = c.toneAubergine },
 
-	Variable = { fg = '#8B93E6' },
-	VariableBuiltin = { fg = '#8B93E6', gui = 'bold' },
-	Constant = { fg = aubergine, gui = 'bold' },
+  Variable = { fg = '#8B93E6' },
+  VariableBuiltin = { fg = '#8B93E6', gui = 'bold' },
+  Constant = { fg = c.toneAubergine, gui = 'bold' },
 
-	Number = { fg = water },
-	Float = { fg = water },
-	Boolean = { fg = water, gui = 'bold' },
-	Enum = { fg = water },
+  Number = { fg = c.water },
+  Float = { fg = c.water },
+  Boolean = { fg = c.water, gui = 'bold' },
+  Enum = { fg = c.water },
 
-	Character = { fg = aubergine, gui = 'bold' },
-	SpecialChar = { fg = base8, gui = 'bold' },
+  Character = { fg = c.toneAubergine, gui = 'bold' },
+  SpecialChar = { fg = c.base8, gui = 'bold' },
 
-	String = { fg = green },
-	StringDelimiter = { fg = green },
+  String = { fg = c.green },
+  StringDelimiter = { fg = c.green },
 
-	Special = { fg = aubergine },
-	SpecialBold = { fg = aubergine, gui = 'bold' },
+  Special = { fg = c.toneAubergine },
+  SpecialBold = { fg = c.toneAubergine, gui = 'bold' },
 
-	Field = { fg = aubergine },
-	Argument = { fg = light_sky },
-	Attribute = { fg = light_sky },
-	Identifier = { fg = light_sky },
-	Property = { fg = sky },
-	Function = { fg = sky },
-	FunctionBuiltin = { fg = light_sky, gui = 'bold' },
-	KeywordFunction = { fg = light_bg and orange or water },
-	Method = { fg = aubergine },
+  Field = { fg = c.toneAubergine },
+  Argument = { fg = c.light_sky },
+  Attribute = { fg = c.light_sky },
+  Identifier = { fg = c.light_sky },
+  Property = { fg = c.sky },
+  Function = { fg = c.sky },
+  FunctionBuiltin = { fg = c.light_sky, gui = 'bold' },
+  KeywordFunction = { fg = c.light_bg },
+  Method = { fg = c.toneAubergine },
 
-	Type = { fg = green, gui = 'bold' },
-	TypeBuiltin = { fg = yellow, gui = 'bold' },
-	StorageClass = { fg = light_bg and orange or water },
-	Class = { fg = light_bg and orange or water },
-	Structure = { fg = light_bg and orange or water },
-	Typedef = { fg = light_bg and orange or water },
+  Type = { fg = c.green, gui = 'bold' },
+  TypeBuiltin = { fg = c.yellow, gui = 'bold' },
+  StorageClass = { fg = c.light_bg },
+  Class = { fg = c.light_bg },
+  Structure = { fg = c.light_bg },
+  Typedef = { fg = c.light_bg },
 
-	Regexp = { fg = '#dd0093' },
-	RegexpSpecial = { fg = '#a40073' },
-	RegexpDelimiter = { fg = '#540063', gui = 'bold' },
-	RegexpKey = { fg = '#5f0041', gui = 'bold' },
+  Regexp = { fg = '#dd0093' },
+  RegexpSpecial = { fg = '#a40073' },
+  RegexpDelimiter = { fg = '#540063', gui = 'bold' },
+  RegexpKey = { fg = '#5f0041', gui = 'bold' },
 }
 
 utils.apply_highlight(main_syntax)
@@ -220,142 +193,91 @@ utils.high_link('CommentLabel', 'CommentBold')
 utils.high_link('CommentSection', 'CommentBold')
 utils.high_link('Noise', 'Comment')
 
--- }}}
-
--- Diff {{{
-
+-- Diff
 local diff = {
-	diffLine = { fg = base8, bg = diff_info_bg1 },
-	diffSubName = { fg = base8, bg = diff_info_bg1 },
+  diffLine = { fg = c.base8, bg = c.diff_info_bg1 },
+  diffSubName = { fg = c.base8, bg = c.diff_info_bg1 },
 
-	DiffAdd = { bg = diff_add_bg1 },
-	DiffChange = { bg = diff_add_bg1 },
-	DiffText = { bg = diff_add_bg0 },
-	DiffDelete = { bg = gh_danger_bg0 },
+  DiffAdd = { bg = c.diff_add_bg1 },
+  DiffChange = { bg = c.diff_add_bg1 },
+  DiffText = { bg = c.diff_add_bg0 },
+  DiffDelete = { bg = c.gh_danger_bg0 },
 
-	DiffAdded = { fg = diff_add_fg0, bg = diff_add_bg1 },
-	DiffModified = { fg = fg, bg = diff_info_bg0 },
-	DiffRemoved = { fg = gh_danger_fg0, bg = gh_danger_bg1 },
+  DiffAdded = { fg = c.diff_add_fg0, bg = c.diff_add_bg1 },
+  DiffModified = { fg = c.fg, bg = c.diff_info_bg0 },
+  DiffRemoved = { fg = c.gh_danger_fg0, bg = c.gh_danger_bg1 },
 
-	DiffAddedGutter = { fg = diff_add_fg, gui = 'bold' },
-	DiffModifiedGutter = { fg = diff_info_fg, gui = 'bold' },
-	DiffRemovedGutter = { fg = gh_danger_fg, gui = 'bold' },
+  DiffAddedGutter = { fg = c.diff_add_fg, gui = 'bold' },
+  DiffModifiedGutter = { fg = c.diff_info_fg, gui = 'bold' },
+  DiffRemovedGutter = { fg = c.gh_danger_fg, gui = 'bold' },
 
-	DiffAddedGutterLineNr = { fg = grey },
-	DiffModifiedGutterLineNr = { fg = grey },
-	DiffRemovedGutterLineNr = { fg = grey },
+  DiffAddedGutterLineNr = { fg = c.grey },
+  DiffModifiedGutterLineNr = { fg = c.grey },
+  DiffRemovedGutterLineNr = { fg = c.grey },
 }
-
 utils.high_clear('DiffAdd')
 utils.high_clear('DiffChange')
 utils.high_clear('DiffText')
 utils.high_clear('DiffDelete')
 utils.apply_highlight(diff)
 
--- }}}
-
--- Markdown {{{
+-- Markdown
 local markdown = {
-      markdownCode = { bg = bg_highlight  },
-      markdownCodeBlock = { bg = bg_highlight  },
-      markdownH1 = { gui = "bold"  },
-      markdownH2 = { gui = "bold"  },
-      markdownLinkText = { gui = "underline"  },
+  markdownCode = { bg = c.bg_highlight  },
+  markdownCodeBlock = { bg = c.bg_highlight  },
+  markdownH1 = { gui = "bold"  },
+  markdownH2 = { gui = "bold"  },
+  markdownLinkText = { gui = "underline"  },
 }
-
 utils.apply_highlight(markdown)
---}}}
 
--- Plugins {{{
+-- Plugins
 
--- barbar.nvim {{{
-
-local barbar = {
-	BufferCurrent = { fg = base9, bg = bg },
-	BufferCurrentIndex = { fg = base6, bg = bg },
-	BufferCurrentMod = { fg = yellow, bg = bg },
-	BufferCurrentSign = { fg = water, bg = bg },
-	BufferCurrentTarget = { fg = red, bg = bg, gui = 'bold' },
-
-	BufferVisible = { fg = base7, bg = bg },
-	BufferVisibleIndex = { fg = base9, bg = bg },
-	BufferVisibleMod = { fg = yellow, bg = bg },
-	BufferVisibleSign = { fg = base4, bg = bg },
-	BufferVisibleTarget = { fg = red, bg = bg, gui = 'bold' },
-
-	BufferInactive = { fg = base6, bg = base1 },
-	BufferInactiveIndex = { fg = base6, bg = base1 },
-	BufferInactiveMod = { fg = yellow, bg = base1 },
-	BufferInactiveSign = { fg = base4, bg = base1 },
-	BufferInactiveTarget = { fg = red, bg = base1, gui = 'bold' },
-
-	BufferTabpages = { fg = water, bg = bg_statusline, gui = 'bold' },
-	BufferTabpageFill = { fg = base4, bg = base1, gui = 'bold' },
-
-	BufferPart = { fg = diff_info_fg, bg = diff_info_bg0, gui = 'bold' },
-}
-
-utils.apply_highlight(barbar)
-
--- }}}
-
--- Gitgutter {{{
-
+-- Gitgutter
 utils.high_link('GitGutterAdd', 'DiffAddedGutter')
 utils.high_link('GitGutterChange', 'DiffModifiedGutter')
 utils.high_link('GitGutterDelete', 'DiffRemovedGutter')
 utils.high_link('GitGutterChangeDelete', 'DiffModifiedGutter')
-
 utils.high_link('GitGutterAddLineNr', 'DiffAddedGutterLineNr')
 utils.high_link('GitGutterChangeLineNr', 'DiffModifiedGutterLineNr')
 utils.high_link('GitGutterDeleteLineNr', 'DiffRemovedGutterLineNr')
 utils.high_link('GitGutterChangeDeleteLineNr', 'DiffModifiedGutterLineNr')
 
--- }}}
-
--- Gitsigns {{{
-
+-- Gitsigns
 utils.high_link('GitSignsAdd', 'DiffAddedGutter')
 utils.high_link('GitSignsChange', 'DiffModifiedGutter')
 utils.high_link('GitSignsDelete', 'DiffRemovedGutter')
 utils.high_link('GitSignsChangeDelete', 'DiffModifiedGutter')
 
--- }}}
-
--- Telescope {{{
-
+-- Telescope
 if vim.g.tone_telescope_highlights then
-	local telescope = {
-		TelescopeSelection = { fg = yellow, gui = 'bold' },
-		TelescopeSelectionCaret = { fg = light_bg and orange or water },
-		TelescopeMultiSelection = { fg = grey },
-		TelescopeNormal = { fg = fg },
-		TelescopeMatching = { fg = green, gui = 'bold' },
-		TelescopePromptPrefix = { fg = light_bg and orange or water },
-		TelescopeBorder = { fg = light_bg and orange or water },
-		TelescopePromptBorder = { fg = light_bg and orange or water },
-		TelescopeResultsBorder = { fg = light_bg and orange or water },
-		TelescopePreviewBorder = { fg = light_bg and orange or water },
-	}
-
-	utils.apply_highlight(telescope)
-	utils.high_link('TelescopePrompt', 'TelescopeNormal')
+  local telescope = {
+    TelescopeSelection = { fg = c.yellow, gui = 'bold' },
+    TelescopeSelectionCaret = { fg = c.light_bg and orange or water },
+    TelescopeMultiSelection = { fg = c.grey },
+    TelescopeNormal = { fg = c.fg },
+    TelescopeMatching = { fg = c.green, gui = 'bold' },
+    TelescopePromptPrefix = { fg = c.light_bg and orange or water },
+    TelescopeBorder = { fg = c.light_bg and orange or water },
+    TelescopePromptBorder = { fg = c.light_bg and orange or water },
+    TelescopeResultsBorder = { fg = c.light_bg and orange or water },
+    TelescopePreviewBorder = { fg = c.light_bg and orange or water },
+  }
+  utils.apply_highlight(telescope)
+  utils.high_link('TelescopePrompt', 'TelescopeNormal')
 end
 
--- }}}
-
--- NvimTree {{{
-
+-- NvimTree
 local nvim_tree = {
-	NvimTreeFolderName = { fg = light_bg and base9 or water, gui = 'bold' },
-	NvimTreeRootFolder = { fg = green },
-	NvimTreeEmptyFolderName = { fg = fg_alt, gui = 'bold' },
-	NvimTreeSymlink = { fg = fg, sp = 'underline' },
-	NvimTreeExecFile = { fg = green, gui = 'bold' },
-	NvimTreeImageFile = { fg = light_bg and orange or water },
-	NvimTreeOpenedFile = { fg = fg_alt },
-	NvimTreeSpecialFile = { fg = fg, sp = 'underline' },
-	NvimTreeMarkdownFile = { fg = fg, sp = 'underline' },
+  NvimTreeFolderName = { fg = c.light_bg and base9 or water, gui = 'bold' },
+  NvimTreeRootFolder = { fg = c.green },
+  NvimTreeEmptyFolderName = { fg = c.fg_alt, gui = 'bold' },
+  NvimTreeSymlink = { fg = c.fg, sp = 'underline' },
+  NvimTreeExecFile = { fg = c.green, gui = 'bold' },
+  NvimTreeImageFile = { fg = c.light_bg and orange or water },
+  NvimTreeOpenedFile = { fg = c.fg_alt },
+  NvimTreeSpecialFile = { fg = c.fg, sp = 'underline' },
+  NvimTreeMarkdownFile = { fg = c.fg, sp = 'underline' },
 }
 
 utils.apply_highlight(nvim_tree)
@@ -369,45 +291,21 @@ utils.high_link('NvimTreeGitDeleted', 'DiffRemovedGutter')
 utils.high_link('NvimTreeIndentMarker', 'IndentGuide')
 utils.high_link('NvimTreeOpenedFolderName', 'NvimTreeFolderName')
 
--- }}}
-
--- Dashboard {{{
-
+-- Dashboard
 local dashboard = {
-	dashboardHeader = { fg = '#586268' },
-	dashboardCenter = { fg = light_bg and orange or water },
-	dashboardShortcut = { fg = '#9788b9' },
+  dashboardHeader = { fg = '#586268' },
+  dashboardCenter = { fg = c.light_bg and orange or water },
+  dashboardShortcut = { fg = '#9788b9' },
 }
-
 utils.apply_highlight(dashboard)
 utils.high_link('dashboardFooter', 'dashboardHeader')
 
--- }}}
-
--- WhichKey {{{
-
-local whichkey = {
-	WhichKey = { fg = light_bg and orange or water },
-	WhichKeyGroup = { fg = sky },
-	WhichKeyDesc = { fg = sky },
-	WhichKeySeparator = { fg = base5 },
-	WhichKeyFloat = { bg = base2 },
-	WhichKeyValue = { fg = grey },
-}
-
-utils.apply_highlight(whichkey)
-
--- }}}
-
--- }}}
-
--- LSP {{{
-
+-- LSP
 local msg_underline = {
-	ErrorMsgUnderline = { fg = red, sp = 'undercurl' },
-	WarningMsgUnderline = { fg = yellow, sp = 'undercurl' },
-	MoreMsgUnderline = { fg = water, sp = 'undercurl' },
-	MsgUnderline = { fg = green, sp = 'undercurl' },
+  ErrorMsgUnderline = { fg = c.red, sp = 'undercurl' },
+  WarningMsgUnderline = { fg = c.yellow, sp = 'undercurl' },
+  MoreMsgUnderline = { fg = c.water, sp = 'undercurl' },
+  MsgUnderline = { fg = c.green, sp = 'undercurl' },
 }
 
 utils.apply_highlight(msg_underline)
@@ -439,13 +337,11 @@ utils.high_link('healthError', 'ErrorMsg')
 utils.high_link('healthSuccess', 'Msg')
 utils.high_link('healthWarning', 'WarningMsg')
 
--- LspSaga {{{
-
+-- LspSaga
 local lspsaga = {
-	SagaShadow = { bg = bg },
-	LspSagaDiagnosticHeader = { fg = red },
+  SagaShadow = { bg = c.bg },
+  LspSagaDiagnosticHeader = { fg = c.red },
 }
-
 utils.apply_highlight(lspsaga)
 utils.high_link('LspSagaDiagnosticBorder', 'Normal')
 utils.high_link('LspSagaDiagnosticTruncateLine', 'Normal')
@@ -458,7 +354,7 @@ utils.high_link('DefinitionCount', 'Title')
 utils.high_link('TargetFileName', 'Comment')
 utils.high_link('DefinitionIcon', 'Special')
 utils.high_link('ProviderTruncateLine', 'Normal')
-utils.high_link('LspSagaFinderSelection', 'Search')
+utils.high_link('LspSagaFinderSelection', 'Sear')
 utils.high_link('DiagnosticTruncateLine', 'Normal')
 utils.high_link('DiagnosticError', 'LspDiagnosticsDefaultError')
 utils.high_link('DiagnosticWarning', 'LspDiagnosticsDefaultWarning')
@@ -479,54 +375,49 @@ utils.high_link('LspSagaCodeActionBorder', 'Bold')
 utils.high_link('LspSagaDefPreviewBorder', 'Bold')
 utils.high_link('LspLinesDiagBorder', 'Bold')
 
--- }}}
-
--- }}}
-
--- TreeSitter {{{
-
+-- TreeSitter
 if vim.g.tone_enable_treesitter then
-	utils.high_link('TSException', 'Exception')
-	utils.high_link('TSAnnotation', 'PreProc')
-	utils.high_link('TSAttribute', 'Attribute')
-	utils.high_link('TSConditional', 'Conditional')
-	utils.high_link('TSComment', 'Comment')
-	utils.high_link('TSConstructor', 'Structure')
-	utils.high_link('TSConstant', 'Constant')
-	utils.high_link('TSConstBuiltin', 'Constant')
-	utils.high_link('TSConstMacro', 'Macro')
-	utils.high_link('TSError', 'Error')
-	utils.high_link('TSField', 'Field')
-	utils.high_link('TSFloat', 'Float')
-	utils.high_link('TSFunction', 'Function')
-	utils.high_link('TSFuncBuiltin', 'FunctionBuiltin')
-	utils.high_link('TSFuncMacro', 'Macro')
-	utils.high_link('TSInclude', 'Include')
-	utils.high_link('TSKeyword', 'Keyword')
-	utils.high_link('TSKeywordFunction', 'KeywordFunction')
-	utils.high_link('TSLabel', 'Label')
-	utils.high_link('TSMethod', 'Method')
-	utils.high_link('TSNamespace', 'Directory')
-	utils.high_link('TSNumber', 'Number')
-	utils.high_link('TSOperator', 'Operator')
-	utils.high_link('TSParameter', 'Argument')
-	utils.high_link('TSParameterReference', 'Argument')
-	utils.high_link('TSProperty', 'Property')
-	utils.high_link('TSPunctDelimiter', 'Delimiter')
-	utils.high_link('TSPunctBracket', 'Delimiter')
-	utils.high_link('TSPunctSpecial', 'Delimiter')
-	utils.high_link('TSRepeat', 'Repeat')
-	utils.high_link('TSString', 'String')
-	utils.high_link('TSStringRegex', 'StringDelimiter')
-	utils.high_link('TSStringEscape', 'StringDelimiter')
-	utils.high_link('TSTag', 'Tag')
-	utils.high_link('TSTagDelimiter', 'Delimiter')
-	utils.high_link('TSStrong', 'Bold')
-	utils.high_link('TSURI', 'URL')
-	utils.high_link('TSWarning', 'Warning')
-	utils.high_link('TSDanger', 'Error')
-	utils.high_link('TSType', 'Type')
-	utils.high_link('TSTypeBuiltin', 'TypeBuiltin')
-	utils.high_link('TSVariable', 'None')
-	utils.high_link('TSVariableBuiltin', 'VariableBuiltin')
+  utils.high_link('TSException', 'Exception')
+  utils.high_link('TSAnnotation', 'PreProc')
+  utils.high_link('TSAttribute', 'Attribute')
+  utils.high_link('TSConditional', 'Conditional')
+  utils.high_link('TSComment', 'Comment')
+  utils.high_link('TSConstructor', 'Structure')
+  utils.high_link('TSConstant', 'Constant')
+  utils.high_link('TSConstBuiltin', 'Constant')
+  utils.high_link('TSConstMacro', 'Macro')
+  utils.high_link('TSError', 'Error')
+  utils.high_link('TSField', 'Field')
+  utils.high_link('TSFloat', 'Float')
+  utils.high_link('TSFunction', 'Function')
+  utils.high_link('TSFuncBuiltin', 'FunctionBuiltin')
+  utils.high_link('TSFuncMacro', 'Macro')
+  utils.high_link('TSInclude', 'Include')
+  utils.high_link('TSKeyword', 'Keyword')
+  utils.high_link('TSKeywordFunction', 'KeywordFunction')
+  utils.high_link('TSLabel', 'Label')
+  utils.high_link('TSMethod', 'Method')
+  utils.high_link('TSNamespa', 'Directory')
+  utils.high_link('TSNumber', 'Number')
+  utils.high_link('TSOperator', 'Operator')
+  utils.high_link('TSParameter', 'Argument')
+  utils.high_link('TSParameterReferen', 'Argument')
+  utils.high_link('TSProperty', 'Property')
+  utils.high_link('TSPunctDelimiter', 'Delimiter')
+  utils.high_link('TSPunctBracket', 'Delimiter')
+  utils.high_link('TSPunctSpecial', 'Delimiter')
+  utils.high_link('TSRepeat', 'Repeat')
+  utils.high_link('TSString', 'String')
+  utils.high_link('TSStringRegex', 'StringDelimiter')
+  utils.high_link('TSStringEscape', 'StringDelimiter')
+  utils.high_link('TSTag', 'Tag')
+  utils.high_link('TSTagDelimiter', 'Delimiter')
+  utils.high_link('TSStrong', 'Bold')
+  utils.high_link('TSURI', 'URL')
+  utils.high_link('TSWarning', 'Warning')
+  utils.high_link('TSDanger', 'Error')
+  utils.high_link('TSType', 'Type')
+  utils.high_link('TSTypeBuiltin', 'TypeBuiltin')
+  utils.high_link('TSVariable', 'None')
+  utils.high_link('TSVariableBuiltin', 'VariableBuiltin')
 end

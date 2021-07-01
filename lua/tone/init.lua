@@ -12,13 +12,11 @@ if vim.opt.background:get() == 'light' then
   c = colors.Light
 end
 
-local general_ui = {
-  Normal = { fg = c.fg, bg = c.bg },
-}
+-- require('tone.highlights')
+dofile('/Users/chris/Code/misc/nvim-colors-tone/lua/tone/highlights.lua')
+-- print(debug.getinfo(1).source)
 
 -- Enables pseudo-transparency for the popup-menu
 if vim.opt.pumblend == 1 then
-  vim.opt.pumblend = 20
+ vim.opt.pumblend = 20
 end
-
-utils.apply_highlight(general_ui)

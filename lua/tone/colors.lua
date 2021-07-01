@@ -4,60 +4,119 @@
 
 -- Dark colors (default)
 Dark = {
-  base0 = '#1B2229',
-  base1 = '#1c1f24',
-  base2 = '#202328',
-  base3 = '#23272e',
-  base4 = '#3f444a',
-  base5 = '#5B6268',
-  base6 = '#73797e',
-  base7 = '#9ca0a4',
-  base8 = '#DFDFDF',
-  base9 = '#E6E6E6',
+  -- main colors
+  toneBase1  = '#ebebff',
+  toneBase2  = '#bdbde8',
+  toneBase3  = '#8383af',
+  toneBase4  = '#616181',
+  toneBase5  = '#50506b',
+  toneBase6  = '#3a3a58',
+  toneBase7  = '#222234',
+  toneBase8  = '#181827',
 
-  grey = base4,
-  red = '#ff6c6b',
-  orange = '#da8548',
-  green = '#00ffcc',
-  yellow = '#ECBE7B',
-  blue = '#51afef',
-  dark_blue = '#2257A0',
-  magenta = '#c678dd',
-  light_magenta = magenta,
-  violet = '#a9a1e1',
-  cyan = '#46D9FF',
-  white = '#efefef',
+  toneAubergine = '#a56aa5',
+  tonePurple = '#bdbde7',
+  toneTurquoise = '#00d0a7',
+  toneLeaf = '#28a492',
+  toneSky = '#73b3e5',
+  toneWater = '#1597ff',
+  toneSap = '#ebff00',
 
-  bg = '#282c34',
-  bg_alt = '#21242b',
-  bg_highlight = '#21252a',
-  bg_popup = '#3E4556',
-  bg_statusline = bg_popup,
-  bg_highlighted = '#4A4A45',
+  -- derived colors
+  toneNone = 'NONE',
+  toneFront = '#343434',
+  toneBack = '#f3f3f3',
 
-  fg = '#bbc2cf',
-  fg_alt = '#5B6268',
-  fg_highlight = magenta,
+  toneTabCurrent = '#FFFFFF',
+  toneTabOther = '#CECECE',
+  toneTabOutside = '#E8E8E8',
 
-  tag = magenta,
+  toneLeftDark = '#F3F3F3',
+  toneLeftMid = '#E5E5E5',
+  toneLeftLight = '#F3F3F3',
 
-  diff_info_fg = orange,
-  diff_info_bg0 = magenta,
-  diff_info_bg1 = magenta,
+  tonePopupFront = '#000000',
+  tonePopupBack = '#F3F3F3',
+  tonePopupHighlightBlue = '#D6EBFF',
+  tonePopupHighlightGray = '#767676',
 
-  diff_add_fg = green,
-  diff_add_fg0 = magenta,
-  diff_add_bg0 = magenta,
-  diff_add_bg1 = magenta,
+  toneSplitLight = '#EEEEEE',
+  toneSplitDark = '#DDDDDD',
+  toneSplitThumb = '#DFDFDF',
 
-  gh_danger_fg = red,
-  gh_danger_fg0 = magenta,
-  gh_danger_bg0 = magenta,
-  gh_danger_bg1 = magenta,
+  toneCursorDarkDark = '#E5EBF1',
+  toneCursorDark = '#6F6F6F',
+  toneCursorLight = '#767676',
+  toneSelection = '#ADD6FF',
+  toneLineNumber = '#dbdbe8',
+
+  toneDiffRedDark = '#800000',
+  toneDiffRedLight = '#CD3131',
+  toneDiffRedLightLight = '#FF0000',
+  toneDiffGreenDark = '#168256',
+  toneDiffGreenLight = '#008000',
+  toneSearchCurrent = '#A8AC94',
+  toneSearch = '#F8C9AB',
 }
 
 -- Light colors
 Light = {
+  -- main colors
+  toneBase1  = '#343434',
+  toneBase2  = '#222234',
+  toneBase3  = '#3a3a58',
+  toneBase4  = '#50506b',
+  toneBase5  = '#616181',
+  toneBase6  = '#8383af',
+  toneBase7  = '#bdbde8',
+  toneBase8  = '#f3f3f3',
+
+  toneAubergine = '#a56aa5',
+  tonePurple = '#bdbde7',
+  toneTurquoise = '#00d0a7',
+  toneLeaf = '#28a492',
+  toneSky = '#73b3e5',
+  toneWater = '#1597ff',
+  toneSap = '#ebff00',
+
+  -- derived colors
+  toneNone = 'NONE',
+  toneFront = '#343434',
+  toneBack = '#f3f3f3',
+
+  toneTabCurrent = '#FFFFFF',
+  toneTabOther = '#CECECE',
+  toneTabOutside = '#E8E8E8',
+
+  toneLeftDark = '#F3F3F3',
+  toneLeftMid = '#E5E5E5',
+  toneLeftLight = '#F3F3F3',
+
+  tonePopupFront = '#000000',
+  tonePopupBack = '#F3F3F3',
+  tonePopupHighlightBlue = '#D6EBFF',
+  tonePopupHighlightGray = '#767676',
+
+  toneSplitLight = '#EEEEEE',
+  toneSplitDark = '#DDDDDD',
+  toneSplitThumb = '#DFDFDF',
+
+  toneCursorDarkDark = '#E5EBF1',
+  toneCursorDark = '#6F6F6F',
+  toneCursorLight = '#767676',
+  toneSelection = '#ADD6FF',
+  toneLineNumber = '#dbdbe8',
+
+  toneDiffRedDark = '#800000',
+  toneDiffRedLight = '#CD3131',
+  toneDiffRedLightLight = '#FF0000',
+  toneDiffGreenDark = '#168256',
+  toneDiffGreenLight = '#008000',
+  toneSearchCurrent = '#A8AC94',
+  toneSearch = '#F8C9AB',
+
+
+
   base0 = '#f0f0f0',
   base1 = '#e7e7e7',
   base2 = '#dfdfdf',
@@ -82,13 +141,13 @@ Light = {
   cyan = '#0184bc',
   white = '#efefef',
 
-  bg = '#fafafa',
+  bg = '#f3f3f3',
   bg_alt = '#f0f0f0',
   bg_highlight = magenta,
   bg_popup = bg_alt,
   bg_statusline = bg_popup,
 
-  fg = base5,
+  fg = '#0f1533',
   fg_alt = base3,
   fg_highlight = magenta,
 
