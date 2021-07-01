@@ -30,9 +30,9 @@ Light = {
   toneBase3  = '#a3a3a8',
   toneBase4  = '#b9b9c3',
   toneBase5  = '#d2d2dd',
-  toneBase6  = '#d8d8e8',
-  toneBase7  = '#e9e9fa',
-  toneBase8  = '#f3f3f3',
+  toneBase6  = '#e2e2e8',
+  toneBase7  = '#ebebf0',
+  toneBase8  = '#f1f1f3',
 
   toneAubergine = '#a56aa5',
   tonePurple = '#6d6da7',

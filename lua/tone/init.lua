@@ -20,11 +20,13 @@ end
 -- General UI
 local general_ui = {
   Normal = { fg = c.toneBase1, bg = c.toneBase8 },
-  NormalPopup = { fg = c.toneBase2, bg = c.toneBase6 },
-  NormalPopover = { fg = c.toneBase2, bg = c.toneBase6 },
-  NormalPopupPrompt = { fg = c.toneBase2, bg = c.toneBase6, gui = 'bold' },
-  NormalPopupSubtle = { fg = c.toneBase4, bg = c.toneBase6, },
-  EndOfBuffer = { fg = c.bg, bg = c.bg },
+  utils.high_link('Normal', 'EndOfBuffer'),
+
+  -- Dropdowns
+  Pmenu = { fg = c.toneBase1, bg = c.toneBase7 },
+  PmenuSel = { fg = c.toneBase8, bg = c.toneWater },
+  PmenuSbar = { fg = c.toneBase2, bg = c.toneBase7 },
+  PmenuThumb = { bg = c.toneBase4, },
 
   Visual = { bg = c.toneSap },
   VisualBold = { bg = c.toneSap, gui = 'bold' },
@@ -77,9 +79,9 @@ local search_high_ui = {
 
   Question = { fg = c.toneTurquoise, gui = 'bold' },
 
-  File = { fg = c.fg },
+  File = { fg = c.toneBase4 },
   Directory = { fg = c.toneAubergine, gui = 'bold' },
-  Title = { fg = c.toneAubergine, gui = 'bold' },
+  Title = { fg = c.toneTurquoise, gui = 'bold' },
 
   Bold = { gui = 'bold' },
   Emphasis = { fg = c.toneTurquoise, gui = 'bold' },
@@ -167,7 +169,7 @@ local main_syntax = {
   Field = { fg = c.toneAubergine },
   Argument = { fg = c.toneBase3 },
   Attribute = { fg = c.toneBase3 },
-  Identifier = { fg = c.toneAubergine },
+  Identifier = { fg = c.tonePurple },
   Property = { fg = c.tonePurple },
   Function = { fg = c.toneSky },
   FunctionBuiltin = { fg = c.toneSky, gui = 'bold' },
@@ -232,10 +234,14 @@ utils.apply_highlight(diff)
 
 -- Markdown
 local markdown = {
-  markdownCode = { bg = c.bg_highlight  },
-  markdownCodeBlock = { bg = c.bg_highlight  },
+  markdownCode = { bg = c.toneBase5  },
+  markdownCodeBlock = { bg = c.toneBase5  },
   markdownH1 = { gui = "bold"  },
   markdownH2 = { gui = "bold"  },
+  markdownH3 = { gui = "bold"  },
+  markdownH4 = { gui = "bold"  },
+  markdownH5 = { gui = "bold"  },
+  markdownH6 = { gui = "bold"  },
   markdownLinkText = { gui = "underline"  },
 }
 utils.apply_highlight(markdown)
