@@ -75,14 +75,14 @@ local search_high_ui = {
   Highlight = { bg = c.toneSap },
   HighlightSubtle = { bg = c.bg_highlighted },
 
-  Question = { fg = c.green, gui = 'bold' },
+  Question = { fg = c.toneTurquoise, gui = 'bold' },
 
   File = { fg = c.fg },
   Directory = { fg = c.toneAubergine, gui = 'bold' },
   Title = { fg = c.toneAubergine, gui = 'bold' },
 
   Bold = { gui = 'bold' },
-  Emphasis = { fg = c.green, gui = 'bold' },
+  Emphasis = { fg = c.toneTurquoise, gui = 'bold' },
 }
 utils.apply_highlight(search_high_ui)
 
@@ -127,9 +127,9 @@ local main_syntax = {
   URL = { fg = c.toneBase1, sp = 'undercurl' },
   Underlined = { fg = c.toneBase1, sp = 'underline' },
 
-  Comment = { fg = c.toneBase5, gui = 'italic' },
-  CommentBold = { fg = c.toneBase5, gui = 'bold' },
-  SpecialComment = { fg = c.toneBase3, gui = 'bold' },
+  Comment = { fg = c.toneBase3, gui = 'italic' },
+  CommentBold = { fg = c.toneBase3, gui = 'bold' },
+  SpecialComment = { fg = c.toneBase2, gui = 'bold' },
 
   Macro = { fg = c.toneAubergine },
   Define = { fg = c.toneAubergine, gui = 'bold' },
@@ -174,7 +174,7 @@ local main_syntax = {
   KeywordFunction = { fg = c.light_bg },
   Method = { fg = c.toneAubergine },
 
-  Type = { fg = c.green, gui = 'bold' },
+  Type = { fg = c.toneTurquoise, gui = 'bold' },
   TypeBuiltin = { fg = c.yellow, gui = 'bold' },
   StorageClass = { fg = c.light_bg },
   Class = { fg = c.light_bg },
@@ -256,7 +256,7 @@ if vim.g.tone_telescope_highlights then
     TelescopeSelectionCaret = { fg = c.light_bg and orange or water },
     TelescopeMultiSelection = { fg = toneBase6 },
     TelescopeNormal = { fg = c.fg },
-    TelescopeMatching = { fg = c.green, gui = 'bold' },
+    TelescopeMatching = { fg = c.toneTurquoise, gui = 'bold' },
     TelescopePromptPrefix = { fg = c.light_bg and orange or water },
     TelescopeBorder = { fg = c.light_bg and orange or water },
     TelescopePromptBorder = { fg = c.light_bg and orange or water },
@@ -270,10 +270,10 @@ end
 -- NvimTree
 local nvim_tree = {
   NvimTreeFolderName = { fg = c.light_bg and base9 or water, gui = 'bold' },
-  NvimTreeRootFolder = { fg = c.green },
+  NvimTreeRootFolder = { fg = c.toneTurquoise },
   NvimTreeEmptyFolderName = { fg = c.fg_alt, gui = 'bold' },
   NvimTreeSymlink = { fg = c.fg, sp = 'underline' },
-  NvimTreeExecFile = { fg = c.green, gui = 'bold' },
+  NvimTreeExecFile = { fg = c.toneTurquoise, gui = 'bold' },
   NvimTreeImageFile = { fg = c.light_bg and orange or water },
   NvimTreeOpenedFile = { fg = c.fg_alt },
   NvimTreeSpecialFile = { fg = c.fg, sp = 'underline' },
@@ -305,7 +305,7 @@ local msg_underline = {
   ErrorMsgUnderline = { fg = c.red, sp = 'undercurl' },
   WarningMsgUnderline = { fg = c.yellow, sp = 'undercurl' },
   MoreMsgUnderline = { fg = c.water, sp = 'undercurl' },
-  MsgUnderline = { fg = c.green, sp = 'undercurl' },
+  MsgUnderline = { fg = c.toneTurquoise, sp = 'undercurl' },
 }
 
 utils.apply_highlight(msg_underline)

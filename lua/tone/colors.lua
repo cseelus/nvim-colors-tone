@@ -63,16 +63,16 @@ Dark = {
 Light = {
   -- main colors
   toneBase1  = '#343434',
-  toneBase2  = '#222234',
-  toneBase3  = '#3a3a58',
-  toneBase4  = '#50506b',
-  toneBase5  = '#616181',
-  toneBase6  = '#8383af',
-  toneBase7  = '#bdbde8',
+  toneBase2  = '#818194',
+  toneBase3  = '#a3a3a8',
+  toneBase4  = '#b9b9c3',
+  toneBase5  = '#d2d2dd',
+  toneBase6  = '#d8d8e8',
+  toneBase7  = '#e9e9fa',
   toneBase8  = '#f3f3f3',
 
   toneAubergine = '#a56aa5',
-  tonePurple = '#bdbde7',
+  tonePurple = '#6d6da7',
   toneTurquoise = '#00d0a7',
   toneLeaf = '#28a492',
   toneSky = '#73b3e5',
