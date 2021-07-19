@@ -1,6 +1,6 @@
 <div align="center">
 
-# doom-one.nvim
+# Tone
 
 ![License](https://img.shields.io/github/license/NTBBloodbath/doom-one.nvim?style=flat-square)
 ![Neovim version](https://img.shields.io/badge/Neovim-0.5-57A143?style=flat-square&logo=neovim)

@@ -5,42 +5,53 @@
 -- Dark colors (default)
 Dark = {
   -- main colors
-  toneBase1  = '#ebebff',
-  toneBase2  = '#bdbde8',
-  toneBase3  = '#8383af',
-  toneBase4  = '#616181',
-  toneBase5  = '#50506b',
-  toneBase6  = '#3a3a58',
-  toneBase7  = '#222234',
-  toneBase8  = '#181827',
+  base1     = '#ebebff',
+  base2     = '#ceceea',
+  base3     = '#8a8ab8',
+  base4     = '#616181',
+  base5     = '#585876',
+  base6     = '#3a3a58',
+  base7     = '#2a2a41',
+  base8     = '#181827',
 
-  toneAubergine = '#c59dc5',
-  tonePurple = '#bdbde7',
-  toneTurquoise = '#1fffd2',
-  toneLeaf = '#28a492',
-  toneSky = '#9fd4ff',
-  toneWater = '#6cbeff',
-  toneSap = '#ebff00',
+  aubergine = '#c59dc5',
+  purple    = '#a9a9e0',
+  turquoise = '#1fffd2',
+  leaf      = '#27a592',
+  sky       = '#9fd4ff',
+  water     = '#55b4ff',
+  gold      = '#c7ca4b',
+  sap       = '#ebff00',
+
+  -- derived
+  toneFg        = '#ebebff',
+  bg        = '#181827'
 }
 
 -- Light colors
 Light = {
-  toneBase1  = '#343434',
-  toneBase2  = '#818194',
-  toneBase3  = '#a3a3a8',
-  toneBase4  = '#b9b9c3',
-  toneBase5  = '#d2d2dd',
-  toneBase6  = '#e2e2e8',
-  toneBase7  = '#ebebf0',
-  toneBase8  = '#f1f1f3',
+  base1     = '#272018',
+  base2     = '#948c82',
+  base3     = '#a8a39e',
+  base4     = '#c3beb7',
+  base5     = '#d3cec6',
+  base6     = '#e8e1da',
+  base7     = '#f0eae2',
+  --base8     = '#fbf4ec',
+  base8     = '#f2eade',
 
-  toneAubergine = '#a56aa5',
-  tonePurple = '#6d6da7',
-  toneTurquoise = '#00d2a6',
-  toneLeaf = '#28a492',
-  toneSky = '#449ee5',
-  toneWater = '#1282dc',
-  toneSap = '#ebff00',
+  aubergine = '#a56aa5',
+  purple    = '#6d6da7',
+  turquoise = '#17c2a0',
+  leaf      = '#28a492',
+  sky       = '#449ee5',
+  water     = '#1282dc',
+  gold      = '#a1a600',
+  sap       = '#a1a600',
+
+  -- derived
+  toneFg        = '#272018',
+  bg        = '#fbf4ec'
 }
 
 return { Dark = Dark, Light = Light }
