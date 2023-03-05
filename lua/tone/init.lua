@@ -27,7 +27,7 @@ local general_ui = {
   PmenuSbar = { fg = c.base2, bg = c.base7 },
   PmenuThumb = { bg = c.base4, },
 
-  Visual = { bg = utils.Mix(c.sap, c.base8, 0.7) },
+  Visual = { bg = utils.Mix(c.sap, c.base8, 0.6) },
   VisualBold = { bg = c.sap, gui = 'bold' },
 
   LineNr = { fg = c.base5 },
@@ -151,9 +151,9 @@ local main_syntax = {
   Exception = { fg = c.aubergine },
   Conditional = { fg = c.purple },
 
-  Variable = { fg = c.sky },
+  Variable = { fg = c.base2 },
   VariableBuiltin = { fg = c.sky, gui = 'bold' },
-  Constant = { fg = c.leaf, gui = 'bold' },
+  Constant = { fg = c.turquoise, gui = 'bold' },
 
   Number = { fg = c.water },
   Float = { fg = c.water },
@@ -179,7 +179,7 @@ local main_syntax = {
   KeywordFunction = { fg = c.sky, gui = 'italic' },
   Method = { fg = c.aubergine },
 
-  Type = { fg = c.leaf },
+  Type = { fg = c.turquoise, gui = 'bold' },
   TypeBuiltin = { fg = c.leaf, gui = 'bold' },
   StorageClass = { fg = c.base2 },
   Class = { fg = c.base4 },
@@ -394,54 +394,54 @@ utils.high_link('LspSagaDefPreviewBorder', 'Bold')
 utils.high_link('LspLinesDiagBorder', 'Bold')
 
 -- TreeSitter
-utils.high_link('TSException', 'Exception')
-utils.high_link('TSAnnotation', 'PreProc')
-utils.high_link('TSAttribute', 'Attribute')
-utils.high_link('TSConditional', 'Conditional')
-utils.high_link('TSComment', 'Comment')
+--utils.high_link('TSException', 'Exception')
+--utils.high_link('TSAnnotation', 'PreProc')
+--utils.high_link('TSAttribute', 'Attribute')
+--utils.high_link('TSConditional', 'Conditional')
+--utils.high_link('TSComment', 'Comment')
 utils.high_link('TSConstructor', 'Structure')
-utils.high_link('TSConstant', 'Constant')
-utils.high_link('TSConstBuiltin', 'Constant')
-utils.high_link('TSConstMacro', 'Macro')
-utils.high_link('TSError', 'Error')
-utils.high_link('TSField', 'Field')
-utils.high_link('TSFloat', 'Float')
-utils.high_link('TSFunction', 'Function')
-utils.high_link('TSFuncBuiltin', 'FunctionBuiltin')
-utils.high_link('TSFuncMacro', 'Macro')
-utils.high_link('TSInclude', 'Include')
-utils.high_link('TSKeyword', 'Keyword')
-utils.high_link('TSKeywordFunction', 'KeywordFunction')
-utils.high_link('TSNamespa', 'Directory')
-utils.high_link('TSNumber', 'Number')
-utils.high_link('TSOperator', 'Operator')
-utils.high_link('TSParameter', 'Argument')
-utils.high_link('TSParameterReferen', 'Argument')
-utils.high_link('TSPunctDelimiter', 'Delimiter')
+--utils.high_link('TSConstant', 'Constant')
+--utils.high_link('TSConstBuiltin', 'Constant')
+--utils.high_link('TSConstMacro', 'Macro')
+--utils.high_link('TSError', 'Error')
+--utils.high_link('TSField', 'Field')
+--utils.high_link('TSFloat', 'Float')
+--utils.high_link('TSFunction', 'Function')
+--utils.high_link('TSFuncBuiltin', 'FunctionBuiltin')
+--utils.high_link('TSFuncMacro', 'Macro')
+--utils.high_link('TSInclude', 'Include')
+--utils.high_link('TSKeyword', 'Keyword')
+--utils.high_link('TSKeywordFunction', 'KeywordFunction')
+--utils.high_link('TSNamespa', 'Directory')
+--utils.high_link('TSNumber', 'Number')
+--utils.high_link('TSOperator', 'Operator')
+--utils.high_link('TSParameter', 'Argument')
+--utils.high_link('TSParameterReferen', 'Argument')
+--utils.high_link('TSPunctDelimiter', 'Delimiter')
 utils.high_link('TSPunctBracket', 'Delimiter')
-utils.high_link('TSPunctSpecial', 'Delimiter')
-utils.high_link('TSRepeat', 'Repeat')
-utils.high_link('TSString', 'String')
-utils.high_link('TSStringRegex', 'StringDelimiter')
-utils.high_link('TSStringEscape', 'StringDelimiter')
-utils.high_link('TSTag', 'Tag')
-utils.high_link('TSTagDelimiter', 'Delimiter')
-utils.high_link('TSStrong', 'Bold')
-utils.high_link('TSURI', 'URL')
-utils.high_link('TSWarning', 'Warning')
-utils.high_link('TSDanger', 'Error')
-utils.high_link('TSType', 'Type')
-utils.high_link('TSTypeBuiltin', 'TypeBuiltin')
+--utils.high_link('TSPunctSpecial', 'Delimiter')
+--utils.high_link('TSRepeat', 'Repeat')
+--utils.high_link('TSString', 'String')
+--utils.high_link('TSStringRegex', 'StringDelimiter')
+--utils.high_link('TSStringEscape', 'StringDelimiter')
+--utils.high_link('TSTag', 'Tag')
+--utils.high_link('TSTagDelimiter', 'Delimiter')
+--utils.high_link('TSStrong', 'Bold')
+--utils.high_link('TSURI', 'URL')
+--utils.high_link('TSWarning', 'Warning')
+--utils.high_link('TSDanger', 'Error')
+--utils.high_link('TSType', 'Type')
+--utils.high_link('TSTypeBuiltin', 'TypeBuiltin')
 utils.high_link('TSVariable', 'Variable')
-utils.high_link('TSVariableBuiltin', 'VariableBuiltin')
+--utils.high_link('TSVariableBuiltin', 'VariableBuiltin')
 
 -- Ruby
-local ruby = {
-  rubyClassName = { fg = c.turquoise, gui = 'bold,underline' },
-}
-utils.apply_highlight(ruby)
-utils.high_link('rubyClass', 'Type')
-utils.high_link('rubyClassBlock', 'Function')
+--local ruby = {
+--  rubyClassName = { fg = c.turquoise, gui = 'bold,underline' },
+--}
+--utils.apply_highlight(ruby)
+--utils.high_link('rubyClass', 'Type')
+--utils.high_link('rubyClassBlock', 'Function')
 utils.high_link('rubyConstant', 'Constant')
 utils.high_link('rubyEntity', 'Character')
 utils.high_link('rubyInterpolation', 'Identifier')

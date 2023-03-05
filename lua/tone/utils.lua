@@ -30,6 +30,17 @@ local function Hex_to_RGB(color)
   }
 end
 
+--local function HSL_to_RGB(h, s, l) {
+--  l /= 100
+--  local a = s * Math.min(l, 1 - l) / 100;
+--  local function(n) {
+--    local k = (n + h / 30) % 12
+--    local color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1)
+--    return Math.round(255 * color).toString(16).padStart(2, '0')
+--  };
+--  return `#${f(0)}${f(8)}${f(4)}`;
+--}
+
 local function interpolate(start, _end, amount)
   local diff = _end - start
   return start + (diff * amount)

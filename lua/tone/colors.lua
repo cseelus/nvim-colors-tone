@@ -12,7 +12,7 @@ Dark = {
   base5     = '#585876',
   base6     = '#3a3a58',
   base7     = '#2a2a41',
-  base8     = '#181827',
+  base8     = '#19192e',
 
   aubergine = '#c59dc5',
   purple    = '#a9a9e0',
@@ -22,36 +22,28 @@ Dark = {
   water     = '#55b4ff',
   gold      = '#c7ca4b',
   sap       = '#ebff00',
-
-  -- derived
-  toneFg        = '#ebebff',
-  bg        = '#181827'
 }
 
 -- Light colors
 Light = {
   base1     = '#272018',
-  base2     = '#948c82',
-  base3     = '#a8a39e',
-  base4     = '#c3beb7',
-  base5     = '#d3cec6',
-  base6     = '#e8e1da',
-  base7     = '#f0eae2',
+  base2     = '#8d867c',
+  base3     = '#9f9b96',
+  base4     = '#ada8a2',
+  base5     = '#bebab3',
+  base6     = '#cec8c1',
+  base7     = '#e6dfd4',
   --base8     = '#fbf4ec',
-  base8     = '#f2eade',
+  base8     = '#faf4ed',
 
   aubergine = '#a56aa5',
   purple    = '#6d6da7',
   turquoise = '#17c2a0',
   leaf      = '#28a492',
-  sky       = '#449ee5',
+  sky       = '#58a6e5',
   water     = '#1282dc',
   gold      = '#a1a600',
   sap       = '#a1a600',
-
-  -- derived
-  toneFg        = '#272018',
-  bg        = '#fbf4ec'
 }
 
 return { Dark = Dark, Light = Light }
